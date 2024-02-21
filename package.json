@@ -12,6 +12,9 @@
     "dev05": "tsx src/05-filter-professions.ts",
     "dev06": "tsx src/06-calculate-the-average-age.ts",
     "dev07": "tsx src/07-longest-name.ts",
+    "dev08": "tsx src/08-increment-age.ts",
+    "dev09": "tsx src/09-search-by-name.ts",
+    "dev10": "tsx src/10-sort-by-age.ts",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
