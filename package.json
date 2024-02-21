@@ -1,0 +1,30 @@
+{
+  "name": "typescript-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev01": "tsx src/01-people-over-25.ts",
+    "dev02": "tsx src/02-sum-all-positive-numbers.ts",
+    "dev03": "tsx src/03-invert-string.ts",
+    "dev04": "tsx src/04-check-for-palindrome.ts",
+    "dev05": "tsx src/05-filter-professions.ts",
+    "dev06": "tsx src/06-calculate-the-average-age.ts",
+    "dev07": "tsx src/07-longest-name.ts",
+    "lint": "eslint src --ext .ts --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
