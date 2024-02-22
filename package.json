@@ -16,6 +16,13 @@
     "dev09": "tsx src/09-search-by-name.ts",
     "dev10": "tsx src/10-sort-by-age.ts",
     "dev:challenge01": "tsx src/challenge-01-movie-rating-system",
+    "dev24": "tsx src/24-mixed-types-with-generics.ts",
+    "dev25": "tsx src/25-tuples-in-typeScript.ts",
+    "dev26": "tsx src/26-JSON-to-typeScript-type.ts",
+    "dev27": "tsx src/27-function-using-interface.ts",
+    "dev28": "tsx src/28-type-assertion-with-objects.ts",
+    "dev29": "tsx src/29-enums-with-specific-values.ts",
+    "dev30": "tsx src/30-generics-in-interfaces.ts",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
