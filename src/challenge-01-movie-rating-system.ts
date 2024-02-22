@@ -69,7 +69,7 @@ function filterByMinimumRating(movies: Movie[], rating: number): Movie[] {
 // 	return bestMovie
 // }
 
-function filterTheBestMovieByGenre(movies: Movie[], genre: string): Movie[] {
+function filterTheBestMoviesByGenre(movies: Movie[], genre: string): Movie[] {
 	const moviesByGenre = movies.filter(movie => movie.genre === genre)
 
 	if (moviesByGenre.length === 0) {
@@ -91,4 +91,4 @@ console.log(`\nAdding the movie ${movieToBeAdded.name}`, addMovie(data, movieToB
 console.log(`\nRemoving the movie ${movieToBeRemoved}`, removeMovie(data, movieToBeRemoved))
 console.log(`\nFilter movies by genre ${genreToBeFiltered}`, filterByGenre(data, genreToBeFiltered))
 console.log(`\nFilter movies by rating ${ratingToBeFiltered}`, filterByMinimumRating(data, ratingToBeFiltered))
-console.log(`\nFilter the best movies by genre ${genreToBeFiltered}`, filterTheBestMovieByGenre(data, genreToBeFiltered))
+console.log(`\nFilter the best movies by genre ${genreToBeFiltered}`, filterTheBestMoviesByGenre(data, genreToBeFiltered))
