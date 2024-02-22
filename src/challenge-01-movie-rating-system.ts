@@ -87,8 +87,8 @@ const movieToBeRemoved = 'Old Year'
 const genreToBeFiltered = 'Romance'
 const ratingToBeFiltered = 3
 
-console.log(`\nAdding the movie ${movieToBeAdded.name}`, addMovie(data, movieToBeAdded))
-console.log(`\nRemoving the movie ${movieToBeRemoved}`, removeMovie(data, movieToBeRemoved))
-console.log(`\nFilter movies by genre ${genreToBeFiltered}`, filterByGenre(data, genreToBeFiltered))
-console.log(`\nFilter movies by rating ${ratingToBeFiltered}`, filterByMinimumRating(data, ratingToBeFiltered))
-console.log(`\nFilter the best movies by genre ${genreToBeFiltered}`, filterTheBestMoviesByGenre(data, genreToBeFiltered))
+console.log(`\nAdding the movie ${movieToBeAdded.name}\n`, addMovie(data, movieToBeAdded))
+console.log(`\nRemoving the movie ${movieToBeRemoved}\n`, removeMovie(data, movieToBeRemoved))
+console.log(`\nFilter movies by genre ${genreToBeFiltered}\n`, filterByGenre(data, genreToBeFiltered))
+console.log(`\nFilter movies by rating ${ratingToBeFiltered}\n`, filterByMinimumRating(data, ratingToBeFiltered))
+console.log(`\nFilter the best movies by genre ${genreToBeFiltered}\n`, filterTheBestMoviesByGenre(data, genreToBeFiltered))
