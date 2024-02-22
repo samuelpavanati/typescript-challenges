@@ -27,3 +27,4 @@ const { id, name, email, active } = answer.data.users[0]
 
 console.log(id, name, email, active)
 console.log(answer.status, user)
+

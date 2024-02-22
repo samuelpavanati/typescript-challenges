@@ -23,6 +23,8 @@
     "dev28": "tsx src/28-type-assertion-with-objects.ts",
     "dev29": "tsx src/29-enums-with-specific-values.ts",
     "dev30": "tsx src/30-generics-in-interfaces.ts",
+    "dev:challenge02": "tsx src/challenge-02-contact-agenda.ts",
+    "dev:challenge021": "tsx src/challenge-02-contact-agenda-chatgpt.ts",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
