@@ -15,6 +15,7 @@
     "dev08": "tsx src/08-increment-age.ts",
     "dev09": "tsx src/09-search-by-name.ts",
     "dev10": "tsx src/10-sort-by-age.ts",
+    "dev:challenge01": "tsx src/challenge-01-movie-rating-system",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
