@@ -11,6 +11,7 @@ pnpm create @eslint/config
 # Modules
 - Module 01 - Javascript: Array Manipulation, Conditionals, and String Operations
 - Module 02 - Basic TypeScript: Including Types, Interfaces, Enums, Generics, and the Difference between TypeScript and JavaScript
+- Module 03 - Object-Oriented Programming with Typescript
 
 # To Do
 - [ ] See the unused concepts
