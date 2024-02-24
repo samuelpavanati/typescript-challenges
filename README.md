@@ -15,3 +15,4 @@ pnpm create @eslint/config
 
 # To Do
 - [ ] See the unused concepts
+- [ ] In Challenge 03, implement the functionalities at the end of the code.
