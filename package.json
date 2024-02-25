@@ -32,6 +32,7 @@
     "dev38": "tsx src/38-using-readonly-on-properties.ts",
     "dev39": "tsx src/39-method-overloading.ts",
     "dev40": "tsx src/40-implementation-of-multiple-interfaces.ts",
+    "dev41": "tsx src/41-converting-callbacks-to-promises.ts",
     "dev:challenge01": "tsx src/challenge-01-movie-rating-system",
     "dev:challenge02": "tsx src/challenge-02-contact-agenda.ts",
     "dev:challenge021": "tsx src/challenge-02-contact-agenda-chatgpt.ts",

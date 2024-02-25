@@ -1,27 +1,35 @@
 import { randomUUID } from 'crypto'
 
 interface Status {
-  borrow(user: User): string
+  borrowBook(book: Book, user: User): string
 }
 
 class Item {
 	constructor(public title: string, public author: string) {}
 }
 
-class Book extends Item implements Status {
+class Book extends Item {
 	private borrowed: boolean = false
 	private borrower: User | null = null
+	private returnDate: Date = new Date()
+	private returnedIn: Date = new Date()
 
 	constructor(title: string, author: string, protected language: string) {
 		super(title, author)
 	}
 
-	private setBorrower(user: User): void {
+	setBorrower(user: User | null): void {
 		this.borrower = user
+		const currentDate = new Date()
+		this.returnDate.setDate(currentDate.getDate() + 7)
 	}
 
-	private setBorrowed(condition: boolean): void {
+	setBorrowed(condition: boolean): void {
 		this.borrowed = condition
+	}
+
+	setReturnedIn(date: Date): void {
+		this.returnedIn.setDate(date.getDate())
 	}
 
 	getBorrower(): User | null {
@@ -35,14 +43,12 @@ class Book extends Item implements Status {
 		return this.borrowed
 	}
 
-	borrow(user: User): string {
-		if (this.borrowed) {
-			return `${this.title} is already borrowed.`
-		} else {
-			this.setBorrowed(true)
-			this.setBorrower(user)
-			return `${this.title} has been borrowed by ${user.getName()}`
-		}
+	getReturnDate(): Date {
+		return this.returnDate
+	}
+
+	getReturnedIn(): Date {
+		return this.returnedIn
 	}
 
 	toString() {
@@ -66,7 +72,7 @@ class User {
 		this.name = name
 		this.email = email
 	}
-
+	
 	getId(): string {
 		return this.id
 	}
@@ -79,7 +85,15 @@ class User {
 		return this.email
 	}
 
-	toString() {
+	setName(name: string): void {
+		this.name = name
+	}
+	
+	setEmail(email: string): void {
+		this.email = email
+	}
+
+	toString(): string {
 		return [
 			`ID: ${this.id}`,
 			`Name: ${this.name}`,
@@ -88,45 +102,91 @@ class User {
 	}
 }
 
-class Libray {
-	private catalog: Item[] = []
+class Libray implements Status {
+	private catalog: Book[] = []
 
-	addItem(item: Item): string {
-		this.catalog.push(item)
-		return `${item.title} has been added to the library catalog.`
+	addBook(book: Book): string {
+		this.catalog.push(book)
+		return `${book.title} has been added to the library catalog.`
 	}
 
-	removeItem(item: Item): string {
-		const index = this.catalog.indexOf(item)
+	removeBook(book: Book): string {
+		const index = this.catalog.indexOf(book)
 
 		if (index !== -1) {
 			this.catalog.splice(index, 1)
-
-			return `${item.title} has been removed from the library catalog.`
+			return `${book.title} has been removed from the library catalog.`
 		} else {
-			return `${item.title} was not found in the library catalog.`
+			return `${book.title} was not found in the library catalog.`
 		}
 	}
 
-	showCatalog(): Item[] {
+	borrowBook(book: Book, user: User): string {
+		if (book.getBorrowed()) {
+			return `${book.title} is already borrowed.`
+		} else {
+			book.setBorrowed(true)
+			book.setBorrower(user)
+			const currentDate = new Date()
+			book.setReturnedIn(currentDate)
+
+			return `${book.title} has been borrowed by ${user.getName()}`
+		}
+	}
+
+	returnBook(book: Book): string {
+		book.setBorrowed(false)
+		book.setBorrower(null)
+		return `The book ${book.title} was returned to the library.`
+	}
+
+	showBooksAvailable(): Book[] {
+		const booksAvailable: Book[] = []
+
+		this.catalog.forEach(book => {
+			if (!book.getBorrowed()) {
+				booksAvailable.push(book)
+			}
+		})
+
+		return booksAvailable
+	}
+
+	showBooksBorrowed(): Book[] {
+		const booksBorrowed: Book[] = []
+
+		this.catalog.forEach(book => {
+			if (book.getBorrowed()) {
+				booksBorrowed.push(book)
+			}
+		})
+
+		return booksBorrowed
+	}
+
+	showCatalog(): Book[] {
 		return this.catalog
 	}
 }
 
 const book1 = new Book('Behind the blue wall', 'Ian Selmer', 'Portuguese')
+const book2 = new Book('White Sky', 'Silas Malon', 'English')
 const user = new User(randomUUID(), 'Célia', 'celia@contact.com')
 const library = new Libray()
 
-console.log(library.addItem(book1))
+console.log(library.addBook(book1))
+console.log(library.addBook(book2))
 console.log('Library Catalog: ', library.showCatalog())
+
 console.log(book1.toString())
-console.log(book1.borrow(user))
+console.log(library.borrowBook(book1, user))
 console.log(book1.getBorrowed())
 console.log(book1.getBorrower())
 console.log(book1.toString())
 console.log('Library Catalog: ', library.showCatalog())
+console.log('Books Available: ', library.showBooksAvailable())
+console.log('Books Borrowed: ', library.showBooksBorrowed())
+console.log(`Return Date of book ${book1.title}`, book1.getReturnDate())
+console.log('Return Book: ', library.returnBook(book1))
 
-// funcionalities
-// catalog available items for borrow
-// borrow registration, including user and return date
-// borrow history and status for each item
+console.log('Library Catalog: ', library.showCatalog())
