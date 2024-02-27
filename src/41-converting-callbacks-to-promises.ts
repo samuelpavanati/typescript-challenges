@@ -17,7 +17,7 @@ function readFile(path: string): Promise<string> {
 }
 
 async function testPromise() {
-	console.log(readFileWithCallback('src/fileForPromise.json', (error, data) => {
+	console.log(readFileWithCallback('src/fileToPromise.json', (error, data) => {
 		if (error) {
 			console.error('Error reading file:', error)
 		} else {
@@ -25,7 +25,7 @@ async function testPromise() {
 		}
 	}))
 
-	console.log(await readFile('src/fileForPromise.json'))
+	console.log(await readFile('src/fileToPromise.json'))
 }
 
 testPromise()
