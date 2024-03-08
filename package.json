@@ -40,6 +40,8 @@
     "dev46": "tsx src/46-async-function-that-returns-a-rejected-promise.ts",
     "dev47": "tsx src/47-promise-race-for-promise-competition.ts",
     "dev48": "tsx src/48-async-await-in-array-manipulation-functions.ts",
+    "dev49": "tsx src/49-asynchronous-and-conditional-module-loading.ts",
+    "dev50": "tsx src/50-usage-of-finally-in-promises.ts",
     "dev:challenge01": "tsx src/challenge-01-movie-rating-system",
     "dev:challenge02": "tsx src/challenge-02-contact-agenda.ts",
     "dev:challenge021": "tsx src/challenge-02-contact-agenda-chatgpt.ts",
