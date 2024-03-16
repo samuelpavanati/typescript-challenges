@@ -6,6 +6,7 @@ npx tsc --init
 pnpm i ts-node -D
 pnpm run dev
 pnpm create @eslint/config
+pnpm update (atualiza todas as dependências)
 ```
 
 # Modules
@@ -26,4 +27,5 @@ pnpm run dev..
 ```
 
 # To Do
-- [ ] See the unused concepts
+- [ ] Review all implementations
+- [ ] Complete the challenge from page 17
