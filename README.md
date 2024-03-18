@@ -7,6 +7,7 @@ pnpm i ts-node -D
 pnpm run dev
 pnpm create @eslint/config
 pnpm update (atualiza todas as dependências)
+pnpm i axios
 ```
 
 # Modules

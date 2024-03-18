@@ -42,6 +42,9 @@
     "dev48": "tsx src/48-async-await-in-array-manipulation-functions.ts",
     "dev49": "tsx src/49-asynchronous-and-conditional-module-loading.ts",
     "dev50": "tsx src/50-usage-of-finally-in-promises.ts",
+    "dev51": "tsx src/51-perform-a-GET-request.ts",
+    "dev52": "tsx src/52-make-a-POST-request.ts",
+    "dev53": "tsx src/53-error-handling-in-requests.ts",
     "dev:challenge01": "tsx src/challenge-01-movie-rating-system",
     "dev:challenge02": "tsx src/challenge-02-contact-agenda.ts",
     "dev:challenge021": "tsx src/challenge-02-contact-agenda-chatgpt.ts",
@@ -60,5 +63,8 @@
     "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
   }
 }
